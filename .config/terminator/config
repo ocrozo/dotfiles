@@ -28,6 +28,7 @@
     foreground_color = "#bcbcbc"
     palette = "#1c1c1c:#af5f5f:#5f875f:#87875f:#5f87af:#5f5f87:#5f8787:#6c6c6c:#444444:#ff8700:#87af87:#ffffaf:#8fafd7:#8787af:#5fafaf:#ffffff"
     scrollback_lines = 5000
+    scrollbar_position = hidden
     use_system_font = False
   [[apprentice]]
     background_color = "#262626"
@@ -35,6 +36,16 @@
     cursor_color = "#bcbcbc"
     foreground_color = "#bcbcbc"
     palette = "#1c1c1c:#af5f5f:#5f875f:#87875f:#5f87af:#5f5f87:#5f8787:#6c6c6c:#444444:#ff8700:#87af87:#ffffaf:#8fafd7:#8787af:#5fafaf:#ffffff"
+  [[white]]
+    background_color = "#fdf6e3"
+    background_image = None
+    copy_on_selection = True
+    font = Menlo for Powerline 10
+    foreground_color = "#657b83"
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    scrollback_lines = 5000
+    scrollbar_position = hidden
+    use_system_font = False
   [[zenburn]]
     background_color = "#3f3f3f"
     background_image = None
