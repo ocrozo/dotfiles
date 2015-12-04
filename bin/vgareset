@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+hdmi2="$(cat /sys/class/drm/card0-HDMI-A-2/status)"
+hdmi3="$(cat /sys/class/drm/card0-HDMI-A-3/status)"
+vga="$(cat /sys/class/drm/card0-VGA-1/status)"
+
+if [ "${hdmi2}" = connected -a "${hdmi3}" = connected ]; then
+  xrandr --output LVDS1 --auto --pos 0x600 --output HDMI3 --auto --pos 3286x0 --output HDMI2 --auto --pos 1366x0 --primary
+elif [ "${vga}" = connected ]; then
+  xrandr --output LVDS1 --auto --primary --output VGA1 --auto --right-of LVDS1
+else
+  xrandr --output LVDS1 --auto --primary --output VGA1 --off --output HDMI2 --off --output HDMI3 --off
+fi

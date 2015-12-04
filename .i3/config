@@ -10,6 +10,12 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
+set $ctrl Control
+set $shft Shift
+set $alt Mod1
+set $ctrl Control
+set $shft Shift
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -178,14 +184,55 @@ mode "$mode_system" {
     }
 bindsym $mod+Pause mode "$mode_system"
 
+# Personal binds
+bindsym $ctrl+$alt+Left workspace prev
+bindsym $ctrl+$alt+Right workspace next
+bindsym $ctrl+$shft+$alt+Left move container to workspace prev
+bindsym $ctrl+$shft+$alt+Right move container to workspace next
+bindsym $mod+t [class="(?i)tilda"] focus
+bindsym $alt+e exec thunar
+#bindsym $super+l exec xflock4
+bindsym $mod+Shift+v exec pavucontrol
+#bindsym $super+Shift+b exec gnome-control-center
+#bindsym F1 exec xfce4-terminal --drop-down -x screen -AURS console
+
 # give guake the possibility to float
 for_window [title="Guake!"] floating enable
 
 # popups
 for_window [window_role="pop-up"] floating enable
 
+# floating windows
+for_window [class="(?i)gnome-control-center"] floating enable
+for_window [class="(?i)notif"] floating enable
+for_window [class="(?i)notif"] border none
+for_window [class="(?i)tilda"] floating enable
+for_window [class="(?i)tilda"] border none
+for_window [class="(?i)xfce4-terminal"] floating enable
+for_window [class="(?i)xfce4-terminal"] border none
+for_window [class="(?i)virt-manager"] floating enable
+for_window [class="(?i)pavucontrol"] floating enable
+for_window [class="(?i)gnome-abrt"] floating enable
+for_window [class="(?i)setroubleshoot"] floating enable
+for_window [class="(?i)linphone"] floating enable
+for_window [class="(?i)sonata"] floating enable
+for_window [class="(?i)bluetooth-wizard"] floating enable
+for_window [class="(?i)system-config-*"] floating enable
+
+for_window [title="(?i)File Operation Progress"] floating enable
+for_window [title="(?i)Openshot Preferences"] floating enable
+for_window [title="(?i)Upload Video"] floating enable
+#for_window [title="(?i)Battle.net"] floating enable
+
 # starting applications
 exec guake --hide
 exec google-chrome
 exec compton
+exec dropbox
 
+# For gtk configuration
+# Restore GNOME's settings
+exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
+#
+# # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
+exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
