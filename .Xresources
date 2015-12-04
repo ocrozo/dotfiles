@@ -308,3 +308,5 @@ URxvt*color7:       #6c6c6c
 URxvt*color15:      #ffffff
 
 URxvt.font: xft:Menlo for Powerline:size=10
+
+Xft.lcdfilter: lcddefault
