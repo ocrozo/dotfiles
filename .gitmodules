@@ -4,3 +4,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "modules/apprentice-colorschemes"]
+	path = modules/apprentice-colorschemes
+	url = https://github.com/xHN35RQ/apprentice-colorschemes.git
