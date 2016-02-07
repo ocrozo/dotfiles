@@ -221,6 +221,7 @@ for_window [class="(?i)gnome-control-center"] floating enable
 for_window [class="(?i)notif"] floating enable
 for_window [class="(?i)notif"] border none
 for_window [class="(?i)tilda"] floating enable
+for_window [class="(?i)Tilda"] floating enable
 for_window [class="(?i)tilda"] border none
 for_window [class="(?i)xfce4-terminal"] floating enable
 for_window [class="(?i)xfce4-terminal"] border none
@@ -251,7 +252,8 @@ exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/activ
 
 # starting applications
 exec --no-startup-id guake --hide
-#exec --no-startup-id google-chrome
+# exec --no-startup-id google-chrome
+# exec --no-startup-id tilda -h
 exec --no-startup-id compton
 exec --no-startup-id dropbox start
 exec --no-startup-id nitrogen --restore &
